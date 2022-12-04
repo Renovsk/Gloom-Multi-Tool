@@ -69,7 +69,7 @@ To get a local copy up and running follow these simple steps.
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/logicguy1/The-all-in-one-discord-tool.git
+   git clone https://github.com/crxel/Gloom-Multi-Tool
    ```
 or you can also press the "Code" button and press the "Download ZIP" button.
 
