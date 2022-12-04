@@ -18,7 +18,6 @@
     <li>
       <a href="#about-the-project">About The Project</a>
       <ul>
-        <li><a href="#built-with">Built With</a></li>
       </ul>
     </li>
     <li>
@@ -32,7 +31,7 @@
 
 ## About The Project
 
-<img src="assets/example.png" alt="Image of product">
+<img src="https://cdn.discordapp.com/attachments/987019645116637195/1049045635661320232/Untitled4_20221204143243.png" alt="Image of product">
 
 ### The tool has all the features you need to run and raid a discord server  
 
