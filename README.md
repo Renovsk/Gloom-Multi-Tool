@@ -3,7 +3,7 @@
     <img src="https://cdn.discordapp.com/attachments/991096084774412289/1048980209065533470/Screenshot_20221203-213813_CapCut.jpg" alt="Logo"
          
          
-  <h3 align="center">The all in one discord tool</h3>
+  <h3 align="center"></h3>
 
   <p align="center">
     The 1# multi-tool for discord.  
