@@ -54,6 +54,10 @@
 + discord acc method
 + bot nuker
 + server lookup
++ bot nuker
++ token checker
++ server joiner
+
 
 
 ### Upcomming Features
