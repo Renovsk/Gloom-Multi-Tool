@@ -34,35 +34,34 @@
 
 ### The tool has all the features you need to run and raid a discord server  
 
-+ bomb account
-+ unfriend everyone
-+ delete all servers
-+ spam new servers
-+ delete all dms
-+ dm everyone
-+ enable lightning
-+ token info
-+ login with token
-+ block friends
-+ profile changer
-+ ip pinger
-+ token grabber
-+ qr grabbermass reporter
-+ groupchat creator
-+ webhook compromiser
-+ discord acc method
-+ bot nuker
-+ server lookup
-+ bot nuker
-+ token checker
-+ server joiner
++ Bomb account
++ Unfriend everyone
++ Delete all servers
++ Spam new servers
++ Delete all dms
++ DM everyone
++ Enable lightning (aka seizure mode)
++ Token info
++ Login with token
++ Block friends
++ Profile changer
++ IP pinger
++ Token grabber
++ QR grabbermass reporter
++ Groupchat creator
++ Webhook compromiser
++ Discord acc method
++ Bot nuker
++ Server lookup
++ Token checker
++ Server joiner
 
 
 
 ### Upcomming Features
 
-- Bot Nuker
-- Nitro Generator
+- Faster Bot Nuker
+- Token Generator
 
 ## Getting Started
 
