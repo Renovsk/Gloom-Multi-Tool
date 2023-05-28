@@ -30,7 +30,7 @@
 
 ## About The Project
 
-<img src="https://cdn.discordapp.com/attachments/987019645116637195/1049045635661320232/Untitled4_20221204143243.png" alt="Image of product">
+<img src="https://media.discordapp.net/attachments/1112218030706004008/1112490168369295370/Untitled160_20230528171836.png?width=1070&height=602" alt="Image of product">
 
 ### The tool has all the features you need to run and raid a discord server  
 
