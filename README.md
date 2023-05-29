@@ -58,7 +58,7 @@
 
 
 
-### Upcomming Features
+### Upcoming Features
 
 - Faster Bot Nuker
 - Token Generator
@@ -74,4 +74,13 @@ To get a local copy up and running follow these simple steps.
    git clone https://github.com/crxel/Gloom-Multi-Tool
    ```
 or you can also press the "Code" button and press the "Download ZIP" button.
+
+2. Download all of the requirements asked by Gloom.py
+
+3. Open a cmd in the with the folder that contains Gloom Multi Tool
+
+4. Run this command in the cmd
+  ```sh
+  python Gloom.py
+  ```
 
