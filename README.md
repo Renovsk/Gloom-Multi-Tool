@@ -71,7 +71,7 @@ To get a local copy up and running follow these simple steps.
 
 1. Clone the repo
 ```sh
-   git clone https://github.com/crxel/Gloom-Multi-Tool
+git clone https://github.com/crxel/Gloom-Multi-Tool
 ```
 or you can also press the "Code" button and press the "Download ZIP" button.
 
