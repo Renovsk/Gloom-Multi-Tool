@@ -70,9 +70,9 @@ To get a local copy up and running follow these simple steps.
 ### Installation
 
 1. Clone the repo
-   ```sh
+```sh
    git clone https://github.com/crxel/Gloom-Multi-Tool
-   ```
+```
 or you can also press the "Code" button and press the "Download ZIP" button.
 
 2. Download all of the requirements asked by Gloom.py
