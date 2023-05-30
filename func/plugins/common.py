@@ -402,7 +402,7 @@ def proxy_scrape():
     with open("./proxies.txt", 'r') as file:
         proxies = file.readlines()
     if not proxies:
-        proxies = [None,]
+        proxies = None
     proxies = [proxy.strip() for proxy in proxies]
     
     
