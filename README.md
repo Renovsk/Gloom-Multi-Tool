@@ -7,7 +7,7 @@
   <p align="center">
     The 1# multi-tool for discord.  
     <br />
-    <a href="https://dsc.gg/gloomx">Join the discord</a>
+    <a href="https://discord.gg/R8Mc8aKqUb">Join the discord</a>
   </p>
 </p>
 
@@ -30,7 +30,7 @@
 
 ## About The Project
 
-<img src="https://cdn.discordapp.com/attachments/987019645116637195/1049045635661320232/Untitled4_20221204143243.png" alt="Image of product">
+<img src="https://media.discordapp.net/attachments/1112218030706004008/1112490168369295370/Untitled160_20230528171836.png?width=1070&height=602" alt="Image of product">
 
 ### The tool has all the features you need to run and raid a discord server  
 
@@ -58,7 +58,7 @@
 
 
 
-### Upcomming Features
+### Upcoming Features
 
 - Faster Bot Nuker
 - Token Generator
@@ -70,8 +70,17 @@ To get a local copy up and running follow these simple steps.
 ### Installation
 
 1. Clone the repo
-   ```sh
-   git clone https://github.com/crxel/Gloom-Multi-Tool
-   ```
+```sh
+git clone https://github.com/crxel/Gloom-Multi-Tool
+```
 or you can also press the "Code" button and press the "Download ZIP" button.
+
+2. Download all of the requirements asked by Gloom.py
+
+3. Open a cmd in the with the folder that contains Gloom Multi Tool
+
+4. Run this command in the cmd
+  ```sh
+  python Gloom.py
+  ```
 
