@@ -6,3 +6,9 @@ keyboard
 b64
 PIL-Tools
 pycryptodome
+httpx
+colorama
+keyboard
+base64
+keyboard
+requests
