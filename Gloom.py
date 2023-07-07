@@ -32,6 +32,7 @@ import func.info
 import func.login
 import func.groupchat_spammer
 import func.massreport
+import func.botnuker
 import func.QR_Grabber
 import func.seizure
 import func.server_leaver
@@ -448,7 +449,7 @@ def main():
 
     elif choice == '19':
         setTitle('Gloom 1.3.0 Bot Nuker')
-        exec(open('func/botnuker.py', encoding='utf-8').read())
+        func.botnuker.botnuker()
 
     elif choice == '20':
         setTitle('Gloom 1.3.0 @ Server Lookup')
