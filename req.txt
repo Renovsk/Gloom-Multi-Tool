@@ -4,7 +4,7 @@ undetected_chromedriver
 tinyaes
 keyboard
 PIL-Tools
-pycryptodome
+pycrypto
 httpx
 colorama
 keyboard
