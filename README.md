@@ -7,7 +7,7 @@
   <p align="center">
     The 1# multi-tool for discord.  
     <br />
-    <a href="https://discord.gg/R8Mc8aKqUb">Join the discord</a>
+    <a href="https://discord.gg/n9Wh2CbwZH">Join the discord</a>
   </p>
 </p>
 
