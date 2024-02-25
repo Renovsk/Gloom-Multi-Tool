@@ -1,3 +1,3 @@
 ## Gloom Multi Tool V2
 
-img("https://images.confusing.wtf/r/iEAfTq.png?compress=false")
+![gui](https://images.confusing.wtf/r/iEAfTq.png?compress=false)
