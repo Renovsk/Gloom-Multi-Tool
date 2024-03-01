@@ -8,6 +8,7 @@
 There has been a series of scams going on youtube claiming to be Gloom, https://github.com/Renovsk/Gloom-Multi-Tool IS THE ONLY OFFICIAL DOWNLOAD FOR GLOOM
 Spread the word!
 
+## Styles
 **Shell Style**:
 ![gui](https://images.confusing.wtf/r/iEAfTq.png?compress=false)
 
